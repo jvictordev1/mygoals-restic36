@@ -19,6 +19,8 @@ Siga o passo a passo descrito abaixo no seu terminal:
   npm run dev
 ```
 
+Acesse a página _localhost:5500_ para utilizar a aplicação
+
 ## Tecnologias utilizadas
 
 - Typescript
