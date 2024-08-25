@@ -9,7 +9,7 @@
 :root {
   --bg-black: #0e0f11;
   --white: #ffffff;
-  --green: #4ade80;
+  --green: #22c55e;
   --light-black: #16181a;
   --dark-gray: #202224;
   --light-gray: #7c7c8a;
@@ -20,19 +20,16 @@
   --font-xl: 20px;
   --font-2xl: 24px;
   --font-3xl: 30px;
-  --font-5xl: 48px;
   --font-light: 300;
   --font-normal: 400;
   --font-semibold: 600;
   --font-bold: 700;
 }
-/* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
 }
@@ -58,10 +55,15 @@ button {
 li {
   list-style: none;
 }
+input {
+  padding: 12px;
+  background-color: transparent;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+}
 dialog {
   max-width: 80%;
   width: 500px;
-  height: 480px;
   border: none;
   border-radius: 12px;
   background-color: var(--light-black);
@@ -74,8 +76,17 @@ dialog {
 dialog[open] {
   animation: fadein 0.3s ease-in forwards;
 }
+dialog h1 {
+  font-size: var(--font-2xl);
+  font-weight: var(--font-bold);
+}
+hr {
+  border: 1px solid var(--dark-gray);
+}
+dialog::backdrop {
+  background-color: rgb(0, 0, 0, 0.5);
+}
 .material-symbols-outlined {
-  color: var(--red);
   font-size: var(--font-3xl);
 }
 .goal-button {
@@ -94,6 +105,9 @@ dialog[open] {
   gap: 12px;
   margin-bottom: 20px;
 }
+.goal-data-dialog-header span {
+  color: var(--red);
+}
 .goal-data-dialog-info-container {
   display: flex;
   align-items: center;
@@ -102,20 +116,15 @@ dialog[open] {
 #close-dialog-button {
   background-color: transparent;
 }
+#close-dialog-button span {
+  color: var(--red);
+}
 #new-transaction-button {
   background-color: transparent;
   border: 1px solid var(--light-gray);
   padding: 8px;
   color: var(--light-gray);
-  border-radius: 4px;
-}
-.deposit-dialog {
-  width: 70%;
-  height: 20%;
-}
-.deposit-dialog input {
-  background-color: transparent;
-  border: 1px solid var(--light-gray);
+  font-weight: var(--font-bold);
   border-radius: 4px;
 }
 #new-goal-dialog {
@@ -131,12 +140,6 @@ dialog[open] {
   justify-content: space-between;
   margin-bottom: 20px;
 }
-#new-goal-form input {
-  padding: 12px;
-  background-color: transparent;
-  border: 1px solid var(--light-gray);
-  border-radius: 4px;
-}
 #new-goal-form button {
   background-color: var(--green);
   padding: 8px;
@@ -144,23 +147,12 @@ dialog[open] {
   font-weight: var(--font-bold);
   font-size: var(--font-xl);
 }
-dialog h1 {
-  font-size: var(--font-2xl);
-  font-weight: var(--font-bold);
-}
-hr {
-  border: 1px solid var(--dark-gray);
-}
-dialog::backdrop {
-  background-color: rgb(0, 0, 0, 0.5);
-}
 .goal-data-buttons {
   display: flex;
   gap: 4px;
 }
 .delete-goal-button {
   background-color: transparent;
-  color: var(--red);
 }
 .transactions-container {
   display: flex;
@@ -191,10 +183,6 @@ dialog::backdrop {
   font-size: var(--font-sm);
   color: var(--light-gray);
 }
-.add-transaction-footer {
-  display: flex;
-  align-items: center;
-}
 #new-transaction-form {
   width: 100%;
   display: flex;
@@ -204,14 +192,6 @@ dialog::backdrop {
 .new-transaction-form-inputs {
   display: flex;
   justify-content: space-between;
-}
-#transaction-value {
-  width: 50%;
-  background-color: transparent;
-  border: 1px solid var(--light-gray);
-  border-radius: 4px;
-  color: var(--white);
-  padding: 4px;
 }
 .deposit {
   color: var(--green);
@@ -226,7 +206,6 @@ dialog::backdrop {
   border-radius: 8px;
   font-weight: var(--font-bold);
   font-size: var(--font-lg);
-  cursor: pointer;
 }
 .app-header {
   display: flex;
@@ -257,6 +236,7 @@ dialog::backdrop {
 .goal-item-heading h1 {
   font-size: var(--font-xl);
   font-weight: var(--font-bold);
+  max-width: 60px;
 }
 .goal-item-heading p {
   font-weight: var(--font-light);
@@ -268,8 +248,7 @@ dialog::backdrop {
   text-align: end;
 }
 .progress-bar {
-  width: 100%;
-  height: 2em;
+  height: 1.5em;
   background-color: var(--light-gray);
   border-radius: 12px;
 }
@@ -303,7 +282,6 @@ dialog::backdrop {
   height: 80px;
   border-radius: 12px;
   background-color: var(--dark-gray);
-  font-weight: var(--font-base);
   margin: 15px 0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   font-size: var(--font-lg);
