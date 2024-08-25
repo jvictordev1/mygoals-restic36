@@ -1,0 +1,342 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+  font-size: var(--font-base);
+  font-weight: var(--font-normal);
+  color: var(--white);
+}
+:root {
+  --bg-black: #0e0f11;
+  --white: #ffffff;
+  --green: #4ade80;
+  --light-black: #16181a;
+  --dark-gray: #202224;
+  --light-gray: #7c7c8a;
+  --red: #f87171;
+  --font-sm: 14px;
+  --font-base: 16px;
+  --font-lg: 18px;
+  --font-xl: 20px;
+  --font-2xl: 24px;
+  --font-3xl: 30px;
+  --font-5xl: 48px;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-semibold: 600;
+  --font-bold: 700;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--bg-black);
+}
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 600px;
+  max-width: 80%;
+}
+button {
+  cursor: pointer;
+  border: none;
+}
+li {
+  list-style: none;
+}
+dialog {
+  max-width: 80%;
+  width: 500px;
+  height: 480px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--light-black);
+  margin: 0;
+  transform: translateX(-50%) translateY(-50%);
+  left: 50%;
+  top: 50%;
+  padding: 20px;
+}
+dialog[open] {
+  animation: fadein 0.3s ease-in forwards;
+}
+.material-symbols-outlined {
+  color: var(--red);
+  font-size: var(--font-3xl);
+}
+.goal-button {
+  background-color: var(--light-black);
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  width: 100%;
+}
+.goal-data-dialog-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.goal-data-dialog-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#close-dialog-button {
+  background-color: transparent;
+}
+#new-transaction-button {
+  background-color: transparent;
+  border: 1px solid var(--light-gray);
+  padding: 8px;
+  color: var(--light-gray);
+  border-radius: 4px;
+}
+.deposit-dialog {
+  width: 70%;
+  height: 20%;
+}
+.deposit-dialog input {
+  background-color: transparent;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+}
+#new-goal-dialog {
+  height: 270px;
+}
+#new-goal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#new-goal-dialog header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+#new-goal-form input {
+  padding: 12px;
+  background-color: transparent;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+}
+#new-goal-form button {
+  background-color: var(--green);
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: var(--font-bold);
+  font-size: var(--font-xl);
+}
+dialog h1 {
+  font-size: var(--font-2xl);
+  font-weight: var(--font-bold);
+}
+hr {
+  border: 1px solid var(--dark-gray);
+}
+dialog::backdrop {
+  background-color: rgb(0, 0, 0, 0.5);
+}
+.goal-data-buttons {
+  display: flex;
+  gap: 4px;
+}
+.delete-goal-button {
+  background-color: transparent;
+  color: var(--red);
+}
+.transactions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.transactions-container h1 {
+  font-size: var(--font-xl);
+  margin-bottom: 4px;
+}
+.transactions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 8px;
+  height: 220px;
+  overflow-y: scroll;
+}
+.transaction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--dark-gray);
+  border-radius: 8px;
+  padding: 14px;
+}
+.transaction-item-date {
+  font-size: var(--font-sm);
+  color: var(--light-gray);
+}
+.add-transaction-footer {
+  display: flex;
+  align-items: center;
+}
+#new-transaction-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.new-transaction-form-inputs {
+  display: flex;
+  justify-content: space-between;
+}
+#transaction-value {
+  width: 50%;
+  background-color: transparent;
+  border: 1px solid var(--light-gray);
+  border-radius: 4px;
+  color: var(--white);
+  padding: 4px;
+}
+.deposit {
+  color: var(--green);
+}
+.withdraw {
+  color: var(--red);
+}
+#new-goal-button {
+  padding: 8px 0;
+  background-color: var(--green);
+  border: none;
+  border-radius: 8px;
+  font-weight: var(--font-bold);
+  font-size: var(--font-lg);
+  cursor: pointer;
+}
+.app-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.app-header h1 {
+  font-size: var(--font-3xl);
+  font-weight: var(--font-bold);
+}
+.app-header p {
+  font-weight: var(--font-light);
+}
+.goals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 10px;
+  max-height: 500px;
+  height: 500px;
+  overflow-y: scroll;
+}
+.goal-item-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.goal-item-heading h1 {
+  font-size: var(--font-xl);
+  font-weight: var(--font-bold);
+}
+.goal-item-heading p {
+  font-weight: var(--font-light);
+}
+.goal-item-heading h4 {
+  font-weight: var(--font-semibold);
+}
+.goal-item-price {
+  text-align: end;
+}
+.progress-bar {
+  width: 100%;
+  height: 2em;
+  background-color: var(--light-gray);
+  border-radius: 12px;
+}
+.progress-done {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--green);
+  border-radius: 12px;
+  height: 100%;
+  width: 0;
+  max-width: 100%;
+  font-weight: var(--font-bold);
+}
+#toast-box {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px;
+}
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  width: 400px;
+  height: 80px;
+  border-radius: 12px;
+  background-color: var(--dark-gray);
+  font-weight: var(--font-base);
+  margin: 15px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  font-size: var(--font-lg);
+  position: relative;
+}
+.toast::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--green);
+  animation: anim 4s linear forwards;
+}
+.sucess span {
+  color: var(--green);
+}
+@keyframes anim {
+  100% {
+    width: 0;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@media (max-width: 700px) {
+  #toast-box {
+    right: 0;
+  }
+}
