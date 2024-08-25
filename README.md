@@ -14,12 +14,12 @@ Siga o passo a passo descrito abaixo no seu terminal:
 
 ```bash
   git clone https://github.com/jvictordev1/mygoals-restic36
-  cd mygoals
+  cd mygoals-restic36
   npm i
   npm run dev
 ```
 
-Acesse a página _localhost:5500_ para utilizar a aplicação
+Acesse a página _127.0.0.1:5500_ para utilizar a aplicação
 
 ## Tecnologias utilizadas
 

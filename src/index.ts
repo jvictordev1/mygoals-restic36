@@ -11,11 +11,22 @@ const deleteGoalButton = document.getElementById("delete-goal-button"); // obtem
 const newGoalDialog = <HTMLDialogElement>(
   document.getElementById("new-goal-dialog")
 ); // obtem o dialog para adição de novas metas
+const goalDataDialog = <HTMLDialogElement>(
+  document.getElementById("goal-data-dialog")
+); // obtem o dialog de detalhamento da meta
 const newGoalForm = document.getElementById("new-goal-form"); // obtem o elemento de formulario para adicionar nova meta
 
 newGoalButton?.addEventListener("click", () => {
   // adiciona resposta a evento de click no botão de nova meta, disparando a abertura do dialog para adição de novas metas
   onDialogOpen(newGoalDialog);
+});
+newGoalDialog.addEventListener("cancel", (e) => {
+  // evita com que o usuário possa sair do dialog com esc
+  e.preventDefault();
+});
+goalDataDialog.addEventListener("cancel", (e) => {
+  // evita com que o usuário possa sair do dialog com esc
+  e.preventDefault();
 });
 newTransactionForm?.addEventListener("submit", (e) => {
   // adiciona resposta a evento de submit do formulário de nova transação
@@ -71,6 +82,7 @@ deleteGoalButton?.addEventListener("click", () => {
   const dialog = <HTMLDialogElement>document.querySelector("dialog[open='']"); // busca dialog correntemente aberto
   const goalId = dialog.getAttribute("name"); // busca valor do atributo name do dialog, ou seja, id da meta sendo mostrada
   goalListManager.removeGoal(goalId!); // remove a meta da lista de metas
+  dialog.querySelector("#transactions-list")!.innerHTML = "";
   dialog?.close(); // fecha o dialog
   showToaster(
     `<span class="material-symbols-outlined">check_circle</span>Meta removida com sucesso`,

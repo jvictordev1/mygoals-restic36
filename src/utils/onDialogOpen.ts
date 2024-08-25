@@ -8,8 +8,8 @@ export function onDialogOpen(dialog: HTMLDialogElement, goalData?: Goal) {
   const closeButton = dialog.querySelector("#close-dialog-button"); // busca o botão de fechar o dialog
   const transactionList = document.querySelector("#transactions-list"); // busca a lista de transações dentro do dialog
   closeButton!.addEventListener("click", () => {
-    dialog.close();
     transactionList!.innerHTML = "";
+    dialog.close();
   }); // adiciona o evento de fechar o dialog ao clicar no botão de fechar e limpa a lista de transações ao fecha-lo
   dialog.showModal(); // mostra o dialog em tela
   if (goalData) {
